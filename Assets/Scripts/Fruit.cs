@@ -5,6 +5,8 @@ public class Fruit : MonoBehaviour
     public GameObject whole;
     public GameObject sliced;
 
+    public int points = 1;
+
     private Rigidbody fruitRigidbody;
     private Collider fruitCollider;
     private ParticleSystem juiceParticleEffect;
@@ -18,6 +20,8 @@ public class Fruit : MonoBehaviour
 
     private void Slice(Vector3 direction, Vector3 position, float force)
     {
+        FindObjectOfType<GameManager>().IncreaseScore(points);
+
         whole.SetActive(false);
         sliced.SetActive(true);
 

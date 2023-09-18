@@ -39,6 +39,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kiwi
       objectReference: {fileID: 0}
+    - target: {fileID: 7358718324691316209, guid: e88f6b04dc195435db63d58d520d4d21, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3022be533370143c4a691de9e719f18f, type: 2}
     - target: {fileID: 8195307241063331302, guid: e88f6b04dc195435db63d58d520d4d21, type: 3}
       propertyPath: m_RootOrder
       value: 0

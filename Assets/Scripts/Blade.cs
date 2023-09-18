@@ -3,16 +3,20 @@ using UnityEngine;
 public class Blade : MonoBehaviour
 {
     public float minSliceVelocity = 0.01f;
+    public float sliceForce = 5f;
     public Vector3 direction { get; private set; }
 
     private Camera mainCamera;
     private Collider bladeCollider;
+    private TrailRenderer bladeTrail;
+
     private bool slicing;
 
     private void Awake()
     {
         mainCamera = Camera.main;
         bladeCollider = GetComponent<Collider>();
+        bladeTrail = GetComponentInChildren<TrailRenderer>();
     }
 
     private void OnEnable()
@@ -27,6 +31,25 @@ public class Blade : MonoBehaviour
 
     private void Update()
     {
+        #region Android
+        if (Input.touches.Length > 0)
+        {
+            if (Input.touches[0].phase == TouchPhase.Began)
+            {
+                StartSlicing();
+            }
+            else if (Input.touches[0].phase == TouchPhase.Ended)
+            {
+                StopSlicing();
+            }
+            else
+            {
+                ContinueSlicing();
+            }
+        }
+        #endregion
+
+        #region PC
         if (Input.GetMouseButtonDown(0))
         {
             StartSlicing();
@@ -39,6 +62,7 @@ public class Blade : MonoBehaviour
         {
             ContinueSlicing();
         }
+        #endregion
     }
 
     private void StartSlicing()
@@ -50,12 +74,15 @@ public class Blade : MonoBehaviour
 
         slicing = true;
         bladeCollider.enabled = true;
+        bladeTrail.enabled = true;
+        bladeTrail.Clear();
     }
 
     private void StopSlicing()
     {
         slicing = false;
         bladeCollider.enabled = false;
+        bladeTrail.enabled = false;
     }
 
     private void ContinueSlicing()

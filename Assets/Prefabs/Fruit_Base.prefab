@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8195307241063331302}
   - component: {fileID: 2394484770067119043}
   - component: {fileID: 1647314373325489033}
+  - component: {fileID: 1248849498427835211}
   m_Layer: 0
   m_Name: Fruit_Base
   m_TagString: Untagged
@@ -64,6 +65,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1248849498427835211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274312205556681368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442b12638d7394546ac77e151848e307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whole: {fileID: 5782874809050083658}
+  sliced: {fileID: 4022251032727778514}
 --- !u!1001 &4256044382632987011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -159,6 +174,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 1.0000004}
   m_Center: {x: -0.0000001937151, y: -0.00000001490116, z: 0.50000024}
+--- !u!1 &4022251032727778514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0974f8fa295c14d88bbaa6b1366ec003, type: 3}
+  m_PrefabInstance: {fileID: 4256044382632987011}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4057731705638626627 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 243041194690276544, guid: 0974f8fa295c14d88bbaa6b1366ec003, type: 3}
@@ -259,6 +279,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6010cd134b444f948a8ae54babc19ab, type: 3}
+--- !u!1 &5782874809050083658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d6010cd134b444f948a8ae54babc19ab, type: 3}
+  m_PrefabInstance: {fileID: 6665763052982438939}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6560395914661096432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6010cd134b444f948a8ae54babc19ab, type: 3}

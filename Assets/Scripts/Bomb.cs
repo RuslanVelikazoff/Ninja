@@ -6,7 +6,7 @@ public class Bomb : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            FindObjectOfType<GameManager>().Explode();
+            FindObjectOfType<GameManager>().LoseGame();
         }
     }
 }

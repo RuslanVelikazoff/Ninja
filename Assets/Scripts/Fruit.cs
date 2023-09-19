@@ -47,6 +47,8 @@ public class Fruit : MonoBehaviour
             Blade blade = other.GetComponent<Blade>();
 
             Slice(blade.direction, blade.transform.position, blade.sliceForce);
+
+            FindObjectOfType<AudioManager>().Play("Slice");
         }
     }
 }

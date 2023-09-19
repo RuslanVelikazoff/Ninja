@@ -7,6 +7,7 @@ public class Bomb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             FindObjectOfType<GameManager>().LoseGame();
+            FindObjectOfType<AudioManager>().Play("Lose");
         }
     }
 }

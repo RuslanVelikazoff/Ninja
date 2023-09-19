@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject pauseButton;
+
     public Text scoreText;
     public Text recordText;
 
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour
         blade = FindObjectOfType<Blade>();
         spawner = FindObjectOfType<Spawner>();
 
+        pauseButton.SetActive(false);
         blade.enabled = false;
         spawner.enabled = false;
         scoreText.enabled = false;
@@ -49,6 +52,7 @@ public class GameManager : MonoBehaviour
 
         losePanel.SetActive(true);
 
+        pauseButton.SetActive(false);
         scoreText.enabled = false;
         blade.enabled = false;
         spawner.enabled = false;
@@ -57,6 +61,7 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
+        pauseButton.SetActive(false);
         scoreText.enabled = false;
         blade.enabled = false;
         spawner.enabled = false;
@@ -65,6 +70,7 @@ public class GameManager : MonoBehaviour
     public void UnPauseGame()
     {
         Time.timeScale = 1;
+        pauseButton.SetActive(false);
         scoreText.enabled = true;
         blade.enabled = true;
         spawner.enabled = true;

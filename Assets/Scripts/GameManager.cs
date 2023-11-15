@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         scoreText.text = score.ToString();
 
+        pauseButton.SetActive(true);
         scoreText.enabled = true;
         blade.enabled = true;
         spawner.enabled = true;

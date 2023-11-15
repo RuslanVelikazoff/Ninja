@@ -7,14 +7,14 @@ public class Fruit : MonoBehaviour
 
     public int points = 1;
 
-    private Rigidbody fruitRigidbody;
-    private Collider fruitCollider;
+    private Rigidbody _rigidbody;
+    private Collider _collider;
     private ParticleSystem juiceParticleEffect;
 
     private void Awake()
     {
-        fruitRigidbody = GetComponent<Rigidbody>();
-        fruitCollider = GetComponent<Collider>();
+        _rigidbody = GetComponent<Rigidbody>();
+        _collider = GetComponent<Collider>();
         juiceParticleEffect = GetComponentInChildren<ParticleSystem>();
     }
 
@@ -25,7 +25,7 @@ public class Fruit : MonoBehaviour
         whole.SetActive(false);
         sliced.SetActive(true);
 
-        fruitCollider.enabled = false;
+        _collider.enabled = false;
         juiceParticleEffect.Play();
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -35,7 +35,7 @@ public class Fruit : MonoBehaviour
 
         foreach (Rigidbody slice in slices)
         {
-            slice.velocity = fruitRigidbody.velocity;
+            slice.velocity = _rigidbody.velocity;
             slice.AddForceAtPosition(direction * force, position, ForceMode.Impulse);
         }
     }
